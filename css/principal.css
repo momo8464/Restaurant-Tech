@@ -1,0 +1,483 @@
+/* ===================================
+   1. RÉINITIALISATION GÉNÉRALE
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ===================================
+   2. VARIABLES
+=================================== */
+
+:root {
+    --vert-principal: #0f6b4b;
+    --vert-fonce: #094832;
+    --jaune: #f4b942;
+    --blanc: #ffffff;
+    --noir: #1f1f1f;
+    --gris: #666666;
+    --fond: #f7f7f7;
+}
+
+
+/* ===================================
+   3. BASE DU SITE
+=================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fond);
+    color: var(--noir);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* ===================================
+   4. HEADER
+=================================== */
+
+header {
+    width: 100%;
+    min-height: 5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.8rem 5%;
+
+    background-color: var(--vert-principal);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===================================
+   5. LOGO
+=================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    object-fit: contain;
+}
+
+
+/* ===================================
+   6. NAVIGATION
+=================================== */
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    list-style: none;
+}
+
+header nav a {
+    display: block;
+
+    color: var(--blanc);
+    text-decoration: none;
+
+    font-weight: bold;
+
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    background-color: var(--vert-fonce);
+    color: var(--jaune);
+}
+
+
+/* ===================================
+   7. IMAGE PRINCIPALE / HERO
+=================================== */
+
+.hero {
+    width: 100%;
+}
+
+.image_du_site {
+    width: 100%;
+    height: min(70vh, 40rem);
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ===================================
+   8. SECTION À PROPOS
+=================================== */
+
+.container {
+    width: min(90%, 75rem);
+
+    margin: 0 auto;
+
+    padding: 5rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 4rem;
+}
+
+
+/* TITRES */
+
+.container h1,
+.container h2 {
+    color: var(--vert-principal);
+    line-height: 1.2;
+}
+
+.container h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.container h2 {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    margin-bottom: 1.5rem;
+}
+
+
+/* PARAGRAPHES */
+
+.container p {
+    margin-bottom: 1.2rem;
+    color: var(--gris);
+}
+
+
+/* ===================================
+   9. BOUTON
+=================================== */
+
+.bouton {
+    display: inline-block;
+
+    margin-top: 1rem;
+    padding: 0.9rem 1.5rem;
+
+    background-color: var(--vert-principal);
+    color: var(--blanc);
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 0.5rem;
+
+    transition: 0.3s;
+}
+
+.bouton:hover {
+    background-color: var(--vert-fonce);
+
+    transform: translateY(-0.2rem);
+}
+
+
+/* ===================================
+   10. LOCALISATION
+=================================== */
+
+.localisation {
+    width: min(90%, 75rem);
+
+    margin: 0 auto;
+    padding-bottom: 5rem;
+
+    text-align: center;
+}
+
+.localisation h2 {
+    color: var(--vert-principal);
+
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+    margin-bottom: 2rem;
+}
+
+
+/* GOOGLE MAPS */
+
+.map-container {
+    width: 100%;
+    overflow: hidden;
+
+    border-radius: 1rem;
+
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 28rem;
+
+    display: block;
+
+    border: none;
+}
+
+
+/* ===================================
+   11. FOOTER
+=================================== */
+
+footer {
+    width: 100%;
+
+    background-color: var(--vert-fonce);
+    color: var(--blanc);
+
+    padding: 2rem 5%;
+}
+
+.footer-content {
+    width: min(100%, 75rem);
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+footer nav {
+    display: flex;
+    align-items: center;
+
+    gap: 1.5rem;
+}
+
+footer nav a {
+    color: var(--blanc);
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+footer nav a:hover {
+    color: var(--jaune);
+}
+
+
+/* LOGO TÉLÉPHONE */
+
+.logo_footer {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* ===================================
+   12. TABLETTE
+=================================== */
+
+@media screen and (max-width: 900px) {
+
+    .container {
+        gap: 2.5rem;
+    }
+
+    header {
+        padding: 0.8rem 4%;
+    }
+
+    header nav ul {
+        gap: 0.5rem;
+    }
+
+    header nav a {
+        padding: 0.6rem 0.8rem;
+    }
+}
+
+
+/* ===================================
+   13. MOBILE
+=================================== */
+
+@media screen and (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 1rem;
+
+        padding: 1rem;
+    }
+
+    .logo img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    header nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 0.4rem;
+    }
+
+    header nav a {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+
+    /* HERO */
+
+    .image_du_site {
+        height: 50vh;
+    }
+
+
+    /* À PROPOS */
+
+    .container {
+        grid-template-columns: 1fr;
+
+        padding: 3.5rem 0;
+
+        gap: 3rem;
+    }
+
+    .container p {
+        text-align: left;
+    }
+
+
+    /* LOCALISATION */
+
+    .localisation {
+        padding-bottom: 3.5rem;
+    }
+
+    .map-container iframe {
+        height: 22rem;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        flex-direction: column;
+        justify-content: center;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ===================================
+   14. PETITS TÉLÉPHONES
+=================================== */
+
+@media screen and (max-width: 480px) {
+
+    header {
+        padding: 0.8rem;
+    }
+
+    .logo img {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    header nav ul {
+        width: 100%;
+    }
+
+    header nav a {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+
+    /* HERO */
+
+    .image_du_site {
+        height: 18rem;
+    }
+
+
+    /* CONTENU */
+
+    .container {
+        width: 88%;
+        padding: 3rem 0;
+    }
+
+    .container h1 {
+        font-size: 2rem;
+    }
+
+
+    /* BOUTON */
+
+    .bouton {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* CARTE */
+
+    .localisation {
+        width: 88%;
+    }
+
+    .map-container iframe {
+        height: 18rem;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+}
